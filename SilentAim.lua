@@ -1,3 +1,6 @@
+```lua
+-- Silent Aim Script for Murderers VS Sheriffs Duels
+
 local players = game:GetService("Players")
 local localPlayer = players.LocalPlayer
 local character = localPlayer.Character
@@ -32,7 +35,7 @@ local function aimAtPlayer(player)
     end
 end
 
-
+-- Toggle Button
 local toggleButton = Instance.new("ScreenGui")
 local button = Instance.new("TextButton")
 button.Text = "Silent Aim: Off"
@@ -52,15 +55,14 @@ button.MouseButton1Click:Connect(function()
     if aimEnabled then
         aimEnabled = false
         button.Text = "Silent Aim: Off"
-
-
+``````lua
     else
         aimEnabled = true
         button.Text = "Silent Aim: On"
     end
 end)
 
-
+-- Main Loop
 while true do
     if aimEnabled then
         local closestPlayer = getClosestPlayer()
@@ -70,3 +72,4 @@ while true do
     end
     wait(0.1)
 end
+```
